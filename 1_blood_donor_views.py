@@ -1,4 +1,4 @@
-import mysql.connector
+
 from mysql import connector
 import datetime
 
@@ -76,13 +76,13 @@ class BloodDonorManager:
                 placeholder="" # create empty string, this dynamic variable will be used to construct the set part of the SQL query
                 for k in kwargs.keys():
                     placeholder += k +"=%s, "
-                    placeholder = placeholder.rstrip(", ") # rstrip removes last comma to work where close work properly
-                    query =f"update donor set {placeholder} where id =%s"
-                    values =[v for v in kwargs.values()]
-                    values.append(id)
-                    self.cursor.execute(query,values)
-                    self.connection.commit()
-                    print("Donor details Updated Successfully...!")
+                placeholder = placeholder.rstrip(", ") # rstrip removes last comma to work where close work properly
+                query =f"update donor set {placeholder} where id =%s"
+                values =[v for v in kwargs.values()]
+                values.append(id)
+                self.cursor.execute(query,values)
+                self.connection.commit()
+                print("Donor details Updated Successfully...!")
 
 
             else:
