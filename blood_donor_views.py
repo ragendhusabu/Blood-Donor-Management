@@ -40,8 +40,7 @@ class BloodDonorManager:
             self.cursor.execute(query)
             records =self.cursor.fetchall()
             #print(records)
-            for data in records:
-                print(data)
+            return records
         except Exception as e:
             print(e)
     def retrieve(self,id=None): # setting default argument
@@ -83,7 +82,6 @@ class BloodDonorManager:
                 self.cursor.execute(query,values)
                 self.connection.commit()
                 #print("Donor details Updated Successfully...!")
-
 
             else:
                 print("Data not Found..!")
