@@ -10,7 +10,7 @@ class BloodDonorManager:
             password ="321996",
             database ="blood_db"
         )
-        print("Connected successfully..")
+        #print("Connected successfully..")
 
     def get_object(self, id=None):
         try:
@@ -90,7 +90,7 @@ class BloodDonorManager:
         except Exception as e:
             print(e)
 
-donor_instance =BloodDonorManager()
+#donor_instance =BloodDonorManager()
 #donor_instance.post(name="Anu",blood_group="A+",phone ="8976543456",city="Alappuzha",last_donation=datetime.datetime.today())
 #donor_instance.post(name= "Surya",blood_group="A+",phone="8989768979",city="Eranakulam",last_donation=datetime.datetime.today())
 #donor_instance.post(name="Arun", blood_group="B+", phone="9876543210", city="Kozhikode", last_donation=datetime.datetime.today())
