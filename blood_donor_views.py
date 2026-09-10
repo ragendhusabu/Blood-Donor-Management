@@ -30,7 +30,7 @@ class BloodDonorManager:
             values = [v for v in kwargs.values()]
             self.cursor.execute(query, values)
             self.connection.commit()
-            print("Donor Added Successfully..!")
+            #print("Donor Added Successfully..!")
         except Exception as e:
             print(e)
     def get(self):
@@ -62,7 +62,7 @@ class BloodDonorManager:
                 query = "delete from donor where id= %s"
                 self.cursor.execute(query,values)
                 self.connection.commit()
-                print("Donor Deleted Successfully...!")
+                #print("Donor Deleted Successfully...!")
             else:
                 print("Donor not Found...!")
 
@@ -82,7 +82,7 @@ class BloodDonorManager:
                 values.append(id)
                 self.cursor.execute(query,values)
                 self.connection.commit()
-                print("Donor details Updated Successfully...!")
+                #print("Donor details Updated Successfully...!")
 
 
             else:
@@ -99,11 +99,11 @@ donor_instance =BloodDonorManager()
 #donor_instance.post(name="Anjali", blood_group="A-", phone="9543210876", city="Kannur", last_donation=datetime.datetime.today())
 #donor_instance.post(name="Vishnu", blood_group="O-", phone="9432108765", city="Malappuram", last_donation=datetime.datetime.today())
 #donor_instance.post(name="Neha", blood_group="B-", phone="9321087654", city="Alappuzha", last_donation=datetime.datetime.today())
-donor_instance.get()
-print("_____Details of Retrieved Donor_____")
-donor_instance.retrieve(id=4)
-print("____After deleting____")
-donor_instance.delete(id=1)
-print("____After Updation____")
-donor_instance.put(2, city="Kochi")
-donor_instance.get()
+#donor_instance.get()
+#print("_____Details of Retrieved Donor_____")
+#donor_instance.retrieve(id=4)
+#print("____After deleting____")
+#donor_instance.delete(id=1)
+#print("____After Updation____")
+#donor_instance.put(2, city="Kochi")
+#donor_instance.get()
